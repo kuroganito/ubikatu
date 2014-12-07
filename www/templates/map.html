@@ -1,0 +1,35 @@
+<ion-view title="UBIKATU" >
+	  <ion-nav-buttons side="left">
+	    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content class="has-header">
+	<div class="full-heigth-map" data-tap-disabled="true">
+	   	<ui-gmap-google-map center='map.center' pan="false" zoom='map.zoom' options='map.options'>
+			<ui-gmap-markers models='markers' doCluster="true" coords="'self'" click="'onClick'">
+			  	<ui-gmap-windows show="show">
+                <div ng-non-bindable>
+                	<h3>{{nombre}}</h3>
+					<p>{{actividad}}</p>
+				</div>
+       		 	</ui-gmap-windows>
+           	</ui-gmap-markers>
+		<ui-gmap-marker idKey='myPos.id' coords='myPos.coord' icon='myPos.icon'></ui-gmap-marker>
+	   	</ui-gmap-google-map>  
+	   	</div>
+		<form  class="buscador" ng-submit="buscaTiendas(item)">
+		  	<label ng-class="{hide:visible}" class=" item item-input">
+		    	<i class="icon ion-search placeholder-icon"></i>
+		    	<input type="text"  placeholder="Buscar" ng-blur="salirBuscar()" data-ng-model="item" >
+	  		</label>
+	  		
+
+	  		
+		</form>
+		<div ng-class="{hide:!visible}" ng-click="reanudar()" class="map-title">
+			{{item}}
+		</div>
+	  	<div class="gps-center" ng-click="centrar()">
+	  		<i class="flaticon-gps3"></i>
+		</div>
+	</ion-content>
+</ion-view>

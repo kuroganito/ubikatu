@@ -1,0 +1,40 @@
+<ion-side-menus>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-energized nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-energized">
+      <h1 class="title">Menu</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <div class="item item-divider">
+          Distancia
+        </div>
+        <ion-item nav-clear >
+          <div class="list">
+            <div class="text-center">
+              {{d/1000}} km.
+            </div>
+            <div class="range range-positive">
+              <i>1 km</i>
+              <input type="range"  min="1000" step="1000" max="20000"  ng-change="rangeChange(d)" ng-model="d" value="1000">
+              <i >20 km</i>
+            </div>  
+          </div>
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

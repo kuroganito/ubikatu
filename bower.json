@@ -1,0 +1,11 @@
+{
+  "name": "datosHidalgo",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.13"
+  },
+  "dependencies": {
+    "angular-google-maps": "~2.0.11",
+    "ngCordova": "~0.1.7-alpha"
+  }
+}
